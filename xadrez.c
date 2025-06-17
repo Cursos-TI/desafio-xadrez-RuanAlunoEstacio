@@ -4,6 +4,27 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+void moveBishop(int square){
+    if(square > 0){
+        moveBishop(square-1);
+        printf("Cima Direita\n");
+    }
+}
+
+void moveRook(int square){
+    if(square > 0){
+        moveRook(square-1);
+        printf("Direita\n");
+    }
+}
+
+void moveQueen(int square){
+    if(square > 0){
+        moveQueen(square-1);
+        printf("Esquerda\n");
+    }
+}
+
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
@@ -16,14 +37,18 @@ int main() {
 
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-    printf("Movimentação do Bispo:\n");
+    printf("Movimentação do Bispo com recursividade:\n");
+    moveBishop(bishop);
+    printf("\nMovimentação do Bispo sem recursividade:\n");
     for(int i = 0; i < bishop; i++){
         printf("Cima Direita\n");
     }
 
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-    printf("\nMovimentação da Torre:\n");
+    printf("\nMovimentação da Torre com recursividade:\n");
+    moveRook(rook);
+    printf("\nMovimentação da Torre sem recursividade:\n");
     while(rookMoves < rook) {
         printf("Direita\n");
         rookMoves++;
@@ -31,7 +56,9 @@ int main() {
 
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-    printf("\nMovimentação da Rainha:\n");
+    printf("\nMovimentação da Rainha com recursividade:\n");
+    moveQueen(queen);
+    printf("\nMovimentação da Rainha sem recursividade:\n");
     do{
         printf("Esquerda\n");
         queenMoves++;
