@@ -67,11 +67,24 @@ int main() {
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
-    printf("\nMovimentação do Cavalo: ");
+    printf("\nMovimentação do Cavalo nível aventureiro: ");
     for(int i = 1; i < horse; i++){
         printf("\nBaixo");
         while(i==horse-1){
             printf("\nEsquerda\n");
+            break;
+        }
+    }
+
+    //Movimentação do cavalo nível Master
+    //Não precisaria de mais de uma variável para fazer isso mas é pedido para usar variável múltipla ou condição múltipla
+    printf("\nMovimentação do Cavalo nível Master: ");
+    for(int i = 1, j = 0; i <= horse && j < horse; i++, j++){
+        if(i < horse){
+            printf("\nCima");
+        }
+        if(j == horse-1){
+            printf("\nDireita\n");
             break;
         }
     }
